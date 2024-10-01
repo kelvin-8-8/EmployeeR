@@ -1,19 +1,22 @@
 package com.example.domain;
 
+import java.text.NumberFormat;
+
 public class Employee {
     public static int nextId = 1;
-    private int empId ;
+    private int empId;
     private String name;
     private String ssn;
     private double salary;
+    protected NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
     // Constructor
     public Employee(String name, String ssn, double salary) {
         this.empId = nextId++;
-        if (name != null && name.isEmpty()) {
+        if (name != null && !name.isEmpty()) {
             this.name = name;
         }
-        if (ssn != null && ssn.isEmpty()) {
+        if (ssn != null && !ssn.isEmpty()) {
             this.ssn = ssn;
         }
         if (salary > 27490) {
@@ -60,6 +63,6 @@ public class Employee {
         System.out.println("No.: " + this.empId);
         System.out.println("Name: " + this.name);
         System.out.println("SSN: " + this.ssn);
-        System.out.println("Salary: " + this.salary);
+        System.out.println("Salary: " + formatter.format(this.salary) + "元");
     }
 }
