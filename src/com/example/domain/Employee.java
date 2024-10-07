@@ -58,6 +58,7 @@ public class Employee {
         }
     }
 
+
     public void displayInformation() {
         System.out.println("====Employee INFO====");
         System.out.println("No.: " + this.empId);

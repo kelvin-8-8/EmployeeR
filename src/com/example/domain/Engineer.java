@@ -23,7 +23,7 @@ public class Engineer extends Employee{
     public void displayInformation() {
         super.displayInformation();
         if (skillCount > 0) {
-            System.out.print("Skills: ");
+            System.out.print("Skills:");
             for (int i = 0; i < skillCount; i++) {
                 System.out.print(" " + skills[i]);
             }
